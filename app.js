@@ -4,10 +4,13 @@ const app = new Koa();
 const views = require('koa-views');
 const ejs = require('ejs');
 const body = require('koa-better-body');
+const static = require('koa-static');
 
 const routes = require('./routes');
 const M = 1024 * 1024;
+const D = 3600 * 1000 * 24;
 
+app.use(static(__dirname + '/uploads', { maxage: 7 * D, index: 'index.html', gzip : true }));
 app.use(body({
     //  Default true. If you pass false it won't accept/parse multipart bodies.
     multipart : true,

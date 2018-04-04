@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>原型列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <ul>
+        <% for( var i = 0; i < data.length; i++){ %>
+            <li> <a href="<%= data[i].href %>"><%= data[i].name %></a> </li>
+        <% } %>
+    </ul>    
+</body>
+</html>
